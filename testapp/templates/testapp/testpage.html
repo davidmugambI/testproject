@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %} <!-- for templates that require static -->
+
+{% block title %}Testpage {% endblock %}
+
+{% block body %}
+    <img class="img-fluid rounded-circle mx-auto d-block"
+         src="{% static 'testapp/images/favicon.png' %}" alt="">
+    <hr>
+
+        <div class="jumbotron">
+            <!--<div class="container">-->
+                <h1>This is zalego institute</h1>
+                <p>Delivering excellence</p>
+            <!--</div>-->
+        </div>
+{% endblock %}

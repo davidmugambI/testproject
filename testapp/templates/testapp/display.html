@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+    display data
+{% endblock %}
+
+{% block body %}
+    <table class="table">
+    <caption>List of Laptops</caption>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Lap_type</th>
+            <th>Price</th>
+            <th>Issues</th>
+            <th>Status</th>
+            <th>Manage</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for datum in data %}
+            <tr>
+                <td>{{ datum.id }}</td>
+                <td>{{ datum.lap_type}}</td>
+                <td>{{ datum.price }}</td>
+                <td>{{ datum.issues }}</td>
+                <td>{{ datum.status }}</td>
+                <td><a href="{% url 'testapp:update' datum.id %}" class="badge-pill bg-info">Update</a>
+                <a href="{% url 'testapp:delete' datum.id %}" class="badge-pill bg-danger">Delete</a> </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,14 @@
+.jumbotron{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+img{
+    border: 1px solid black;
+}
+.form {
+    border: 1px solid black;
+    background-color: fuchsia;
+
+    border-radius: 40px 10px;
+}

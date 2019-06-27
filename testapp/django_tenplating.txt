@@ -1,0 +1,162 @@
+DJANGO TEMPLATING - is a django way of specifying how data is displayed.
+
+TEMPLATES TAGS
+    i. logic tags
+        {% logic tag %}
+    ii. variable tags
+        {{ variable }}
+    iii. comment tags
+        {# comment #}
+
+    - loading packages/ libraries
+        {% load packageName %}
+
+    - securing post forms
+        {% csrf_token %}
+
+    - block tags
+          {% block blockName %} content here {% endblock %}
+          they indicates parent templates which can be overwritten by child
+          tenplates
+
+     - extends tag - signals this template extends a parent templates
+        {% extends 'optionalpath/templateNameToBeExtended.html' %}
+        e.g {% extends 'base.html' %}
+
+     - include tag - used to include a template within another
+            {% include 'templateToInclude.html' %}
+
+     - if tag - checks if a condition is True
+        {% if condition %}
+            do sth if true
+        {% else %}
+            do sth if otherwise
+
+        {% endif %}
+
+        for multiple conditions
+
+        {% if condition %} # condition- >,<,in, not in, is, is not, filters
+            do sth if true
+        {% elif condition1 %}
+            do sth
+
+        {% elif condition1 %}
+            do sth
+         ......
+
+         {% else %}
+            do sth if everything else fails
+
+        {% endif %}
+
+     - for tag - loops through a sequence
+        {% for iterVar in  a Sequence %}
+                {{ iterVar }}
+        {% endfor %}
+
+
+        // if sequence is empty/does not have any values
+        {% empty %}
+        {% for iterVar in  a Sequence %}
+                {{ iterVar }}
+        {% empty %}
+            No values in the sequence
+        {% endfor %}
+
+     - url tag
+        {% url 'UrlName' %} or {% url 'appname:UrlName' %}
+
+     - static tag - referring to static files
+            {% static 'pathToStaticFiles/staticFileName' %}
+
+
+
+    displaying var
+        {{ varName }}
+
+
+filter example
+
+{% if condition|filter %}
+
+{% if 'David'|uppercase %}
+
+{% - open logic /block tag
+%} - close logic /block tag
+{{ - open var
+}} - close var
+{# - open comment
+#} - close comment
+
+
+
+DEFAULT USER MODEL FIELDS
+    username
+    first_name
+    last_name
+    email
+    password1
+    password2
+
+BUILT-IN FORMS
+    AuthenticationForm - login form
+    PasswordChangeForm
+    UserCreationForm - registration
+        -username
+        -password1
+        -password2
+    RegistrationForm
+
+
+
+
+TYPES OF FORMS IN DJANGO
+    -html forms
+    -standard django Form
+    -django ModelForm
+
+
+Commonly used field types
+    CharField             converts to html input type='text'
+    IntegerField                           input type='number'
+    DateField                                     type='date'
+    DateTimeField                                 type='datetime'
+    EmailField                                    type='email'
+    FileField                                     type='file'
+    ImageField                                    type='image'
+    URLField
+
+FORM widgets
+    PasswordInput                                  type='password'
+    HiddenInput                                   type='hidden'
+    Textarea
+    FileInput
+
+
+QUERYING THE DATABASE
+get all objects from the database
+    syntax> modelname.objects.all()
+    django shortcut > get_list_or_404(Model)
+
+get one object from the database
+    syntax> modelname.objects.get(column=value) # column value must
+    be unique
+    shortcut > get_object_or_404(Modelname, uniquecolumn=value)
+
+get part of data from the database
+    syntax = modelname.objects.filter(column=value)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
